@@ -12,6 +12,8 @@ import 'screens/home/splash-screen.dart';
 import 'screens/menu/menu-screen.dart';
 import 'screens/menu/menu-main-course.dart';
 import 'screens/menu/menu-snacks.dart';
+import 'screens/menu/menu-drinks.dart';
+import 'screens/menu/menu-desserts.dart';
 
 // Sub Menu - Meli
 // import 'screens/menu/sub-menu/menu-desserts.dart';
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
       title: 'Foodie.id',
       debugShowCheckedModeBanner: false,
       // GANTI DISINI BUAT SCREEN, SESUAI ROUTES
-      initialRoute: '/home',
+      initialRoute: '/menu',
 
       routes: {
         // Home
@@ -54,9 +56,11 @@ class MyApp extends StatelessWidget {
         // '/splash': (context) => const SplashScreen(),
 
         // Menu
-        // '/menu': (context) => const MenuScreen(),
-        // '/menu-main-course': (context) => const MenuMainCourse(),
-        // '/menu-snacks': (context) => const MenuSnacks(),
+        '/menu': (context) => const MenuScreen(),
+        '/menu-main-course': (context) => const MenuMainCourse(),
+        '/menu-snacks': (context) => const MenuSnacks(),
+        '/menu-drinks': (context) => const MenuDrinks(),
+        '/menu-desserts': (context) => const MenuDesserts(),
 
         // Sub Menu
         // '/menu-desserts': (context) => const MenuDesserts(),
