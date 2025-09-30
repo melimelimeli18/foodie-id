@@ -1,7 +1,6 @@
 name: flutter_application_1
 description: "A new Flutter project."
-publish_to: "none"
-
+publish_to: "none" 
 version: 1.0.0+1
 
 environment:
@@ -19,11 +18,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
   assets:
     # Sub Menu image
     - assets\tree.jpg
-
     - assets\image\sub-menu\Cheese_Boba_Latte.png
     - assets\image\sub-menu\chocolote_mousse.png
     - assets\image\sub-menu\brown_sugar_milktea.png
@@ -47,3 +44,15 @@ flutter:
 
     # Icon
     - assets\icon\menu\pattern_icon.svg
+
+    - assets\home\foodie_logo.png
+    - assets\home\images\41.png
+    - assets\home\images\351.png
+    - assets\home\promo\promo1.png
+    - assets\home\promo\promo2.png
+    - assets\home\promo\promo3.png
+    - assets\home\promo\promo4.png
+    - assets\home\promo\promo5.png
+    - assets\home\promo\promo6.png
+    - assets\home\boba.png
+    - assets\home\machi.png
