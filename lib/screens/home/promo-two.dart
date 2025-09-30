@@ -9,7 +9,7 @@ class PromoTwo extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          // Banner Image
+          
           Positioned(
             top: 0,
             left: 0,
@@ -26,7 +26,7 @@ class PromoTwo extends StatelessWidget {
             ),
           ),
 
-          // White Card Container
+          
           Positioned(
             top: 270,
             left: 0,
@@ -45,9 +45,9 @@ class PromoTwo extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Title
+                    
                     const Text(
-                      'Diskon 50% untuk Semua Menu',
+                      'Monday Glory – Spaghetti Voucher',
                       style: TextStyle(
                         color: Colors.black,
                         fontFamily: 'Inter',
@@ -59,15 +59,16 @@ class PromoTwo extends StatelessWidget {
                     
                     const SizedBox(height: 16),
                     
-                    // Description
+                    
                     const Text(
-                      'Promo spesial untuk semua pelanggan setia! Dapatkan potongan harga hingga 50% '
-                      'untuk semua menu makanan dan minuman favorit kamu.\n\n'
-                      'Berlaku untuk dine-in, take away, maupun delivery. Tidak ada minimum pembelian, '
-                      'jadi kamu bisa langsung menikmati diskonnya kapan saja!\n\n'
-                      'Buruan ajak teman dan keluarga untuk menikmati promo spektakuler ini. '
-                      'Promo terbatas hanya untuk 100 pembeli pertama setiap harinya. '
-                      'Jangan sampai kehabisan!',
+                      'Hari Senin sering terasa berat? Tenang, kami punya solusinya!\n\n'
+                      'Setiap hari Senin pukul 12.00 - 13.00 WIB,'
+                      'kamu bisa menukarkan voucher untuk mendapatkan Spaghetti Gratis'
+                      'yang lezat, hangat, dan pastinya bikin kenyang. \n\n'
+                      'Promo ini spesial untuk menemani lunch kamu supaya lebih bersemangat'
+                      'menghadapi awal minggu. Jangan lupa ajak teman atau rekan kerja biar makin seru'
+                      'Promo terbatas hanya untuk penukaran di tempat, jadi pastikan kamu data tepat waktu'
+                      'dan nikmati Monday Glory bersama kami! \n\n',
                       style: TextStyle(
                         color: Colors.black,
                         fontFamily: 'Inter',
@@ -83,7 +84,7 @@ class PromoTwo extends StatelessWidget {
             ),
           ),
 
-          // Back Button
+          
           Positioned(
             top: 13,
             left: 11,

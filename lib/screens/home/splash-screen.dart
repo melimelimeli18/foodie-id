@@ -20,7 +20,8 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           child: Stack(
             children: [
-              // Lingkaran atas kanan
+
+              // untuk membuat lingkaran di atas kanan
               Positioned(
                 top: -50,
                 right: -50,
@@ -33,7 +34,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ),
               ),
-              // Lingkaran bawah kiri
+
+              // untuk membuat lingkaran di bawah kiri
               Positioned(
                 bottom: -80,
                 left: -80,
@@ -46,7 +48,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ),
               ),
-              // Logo di tengah
+
+              // peletakan logo foodie id ditengah dan ukurannya serta mengambil foto dari assets
               Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

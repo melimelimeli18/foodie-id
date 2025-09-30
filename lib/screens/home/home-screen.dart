@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
-// Import file-file promo screen yang sudah ada
 import 'promo-one.dart';
 import 'promo-two.dart';
 import 'promo-tree.dart';
@@ -18,37 +16,39 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header dengan gradient + search bar overlap
-              _buildHeader(),
               
-              const SizedBox(height: 40), // Extra space karena search overlap
+              // header nya ada reedem, search bar, cart button
+              _buildHeader(context),
               
-              // Section Promo
+              const SizedBox(height: 40), 
+              
+              // Promo
               _buildSectionTitle('Promo'),
               const SizedBox(height: 12),
-              const AutoSlidingPromo(), // Widget baru
+              const AutoSlidingPromo(), 
               
               const SizedBox(height: 30),
               
-              // Section Rekomendasi
+              // Rekomendasi
               _buildSectionTitle('Rekomendasi'),
               const SizedBox(height: 12),
               _buildRecommendationList(),
               
-              const SizedBox(height: 30), // Space for bottom nav
+              const SizedBox(height: 30),
             ],
           ),
         ),
       ),
+      // untuk bottom navigation ditaro paling bawah
       bottomNavigationBar: _buildBottomNav(),
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader(BuildContext context) {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        // Gradient background
+        
         Container(
           height: 180,
           decoration: BoxDecoration(
@@ -71,7 +71,8 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(height: 10),
-                // Reward Card
+
+                // membuat redeem section
                 Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -138,45 +139,86 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        // Search bar positioned overlapping
+
+        // Search bar dan Cart button positioned overlapping
         Positioned(
           bottom: -20,
           left: 22,
           right: 22,
-          child: Container(
-            height: 50,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(50),
-              border: Border.all(
-                color: Color.fromRGBO(232, 90, 44, 1),
-                width: 1,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  offset: Offset(0, 2),
-                  blurRadius: 8,
+          child: Row(
+            children: [
+              // Search Bar
+              Expanded(
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(
+                      color: Color.fromRGBO(232, 90, 44, 1),
+                      width: 1,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        offset: Offset(0, 2),
+                        blurRadius: 8,
+                      ),
+                    ],
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Cari makanan atau minuman...',
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Color.fromRGBO(232, 90, 44, 1),
+                      ),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                    ),
+                  ),
                 ),
-              ],
-            ),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Cari makanan atau minuman...',
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: Color.fromRGBO(232, 90, 44, 1),
-                ),
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
               ),
-            ),
+              
+              SizedBox(width: 12), 
+              
+              // Shopping Cart Button
+              GestureDetector(
+                onTap: () {
+                  print('Cart clicked');
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => CartScreen()));
+                },
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFFFFFF),
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF000000).withOpacity(0.1),
+                        offset: const Offset(0, 2),
+                        blurRadius: 8,
+                      ),
+                    ],
+                  ),
+                  child: const Center(
+                    child: Icon(
+                      Icons.shopping_cart_outlined,
+                      color: Color(0xFFFF6B35),
+                      size: 24,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ],
     );
   }
 
+// buat section kek judul gitu, promo, rekomendasi
   Widget _buildSectionTitle(String title) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 22),
@@ -191,6 +233,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+// buat widget rekomendasi
   Widget _buildRecommendationList() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 22),
@@ -198,21 +241,23 @@ class HomeScreen extends StatelessWidget {
         children: [
           _buildRecommendationCard(
             'Brown Sugar Milk Tea',
-            'Rp 30.000,00',
+            'Rp30.000,00',
+            'assets/home/boba.png',
           ),
           SizedBox(height: 20),
           _buildRecommendationCard(
             'Iced Caramel Macchiato',
-            'Rp 30.000,00',
+            'Rp30.000,00',
+            'assets/home/machi.png',
           ),
         ],
       ),
     );
   }
 
-  Widget _buildRecommendationCard(String name, String price) {
+  Widget _buildRecommendationCard(String name, String price, String imagePath) {
     return Container(
-      height: 140,
+      height: 160,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
@@ -238,10 +283,29 @@ class HomeScreen extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            // Product name
+            
             Positioned(
-              top: 17,
-              left: 17,
+              right: -20,
+              top: 0,
+              bottom: 0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
+                child: Image.asset(
+                  imagePath,
+                  height: 160,
+                  width: 210,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            
+            Positioned(
+              top: 20,
+              left: 20,
+              right: 150,
               child: Text(
                 name,
                 style: TextStyle(
@@ -249,12 +313,14 @@ class HomeScreen extends StatelessWidget {
                   fontSize: 21,
                   fontWeight: FontWeight.w600,
                 ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
-            // Price
+            
             Positioned(
-              bottom: 15,
-              left: 13,
+              bottom: 20,
+              left: 20,
               child: Text(
                 price,
                 style: TextStyle(
@@ -263,21 +329,28 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // Add button
+            
             Positioned(
               bottom: 15,
               right: 15,
               child: Container(
-                width: 30,
-                height: 30,
+                width: 35,
+                height: 35,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      offset: Offset(0, 2),
+                      blurRadius: 4,
+                    ),
+                  ],
                 ),
                 child: Icon(
                   Icons.add,
                   color: Color.fromRGBO(232, 90, 44, 1),
-                  size: 20,
+                  size: 22,
                 ),
               ),
             ),
@@ -287,6 +360,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+// bikin navibar 
   Widget _buildBottomNav() {
     return Container(
       height: 75,
@@ -306,39 +380,46 @@ class HomeScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _buildNavItem(Icons.home, 'HOME', true),
-          _buildNavItem(Icons.restaurant_menu, 'MENU', false),
-          _buildNavItem(Icons.person, 'PROFILE', false),
+          _buildNavItem(context, Icons.home, 'HOME', true, '/home'),
+          _buildNavItem(context, Icons.restaurant_menu, 'MENU', false, '/menu'),
+          _buildNavItem(context, Icons.person, 'PROFILE', false, '/profile'),
         ],
       ),
     );
   }
 
-  Widget _buildNavItem(IconData icon, String label, bool isActive) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          color: Color.fromRGBO(232, 90, 44, 1),
-          size: 26,
-        ),
-        SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(
-            fontFamily: 'Plus Jakarta Sans',
-            fontSize: 14,
+  Widget _buildNavItem(BuildContext context, IconData icon, String label, bool isActive, String route) {
+    return GestureDetector(
+      onTap: () {
+        if (!isActive) {
+          Navigator.pushNamed(context, route);
+        }
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
             color: Color.fromRGBO(232, 90, 44, 1),
-            fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+            size: 26,
           ),
-        ),
-      ],
+          SizedBox(height: 4),
+          Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Plus Jakarta Sans',
+              fontSize: 14,
+              color: Color.fromRGBO(232, 90, 44, 1),
+              fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
 
-// Widget AutoSlidingPromo dengan navigation ke file promo terpisah
+// ini buat auto sliding promo 
 class AutoSlidingPromo extends StatefulWidget {
   const AutoSlidingPromo({super.key});
 
@@ -357,11 +438,10 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
     'assets/home/promo/promo3.png',
   ];
 
-  // List widget tujuan untuk setiap promo
   final List<Widget> _promoScreens = [
-    PromoOne(), // dari promo-one.dart
-    PromoTwo(), // dari promo-two.dart
-    PromoTree(), // dari promo-tree.dart
+    PromoOne(), 
+    PromoTwo(), 
+    PromoTree(), 
   ];
 
   @override
@@ -404,7 +484,7 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
       padding: const EdgeInsets.symmetric(horizontal: 22),
       child: Column(
         children: [
-          // Promo Slider
+          
           SizedBox(
             height: 153,
             width: 390,
@@ -419,7 +499,7 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    // Navigate ke screen promo yang sesuai
+                    
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -461,7 +541,6 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
           
           const SizedBox(height: 16),
           
-          // Dots Indicator
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(

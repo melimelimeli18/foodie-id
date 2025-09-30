@@ -9,7 +9,7 @@ class PromoTree extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          // Banner Image
+          
           Positioned(
             top: 0,
             left: 0,
@@ -26,7 +26,7 @@ class PromoTree extends StatelessWidget {
             ),
           ),
 
-          // White Card Container
+          
           Positioned(
             top: 270,
             left: 0,
@@ -45,9 +45,9 @@ class PromoTree extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Title
+                    
                     const Text(
-                      'Gratis Ongkir Tanpa Minimum',
+                      'Spesial Takoyaki – Diskon 20%',
                       style: TextStyle(
                         color: Colors.black,
                         fontFamily: 'Inter',
@@ -59,15 +59,20 @@ class PromoTree extends StatelessWidget {
                     
                     const SizedBox(height: 16),
                     
-                    // Description
+                    
                     const Text(
-                      'Kabar gembira untuk kamu yang suka pesan online! Sekarang kamu bisa menikmati '
-                      'gratis ongkir untuk semua pesanan, tanpa minimum pembelian.\n\n'
-                      'Mau pesan satu minuman aja? Boleh! Mau pesan banyak? Lebih hemat lagi! '
-                      'Semua dapat gratis ongkir sepuasnya.\n\n'
-                      'Promo berlaku untuk semua area pengiriman dalam radius 5km dari outlet terdekat. '
-                      'Nikmati makanan dan minuman favorit kamu langsung di rumah tanpa biaya tambahan. '
-                      'Promo terbatas, buruan pesan sekarang!',
+                      'Takoyaki hangat dengan isian gurita yang lezat,'
+                      'tekstur renyah di luar dan lembut di dalam,'
+                      'sekarang bisa kamu nikmati dengan harga lebih hemat!'
+                      'Dalam periode promo ini, setiap pembelian Takoyaki favoritmu'
+                      'akan mendapatkan diskon 20% langsung di kasir \n\n'
+
+                      'Cocok untuk ngemil sore, teman nonton, atau'
+                      'sekadar memanjakan lidah dengan cita rasa jepang.'
+                      'Jangan sampai ketinggalan, promo berlaku untuk semua varian'
+                      'dan hanya terbatas dalam waktu tertentu.'
+                      'Segera pesan sekarang, karena stok cepat habis setiap harinya!'
+                      ,
                       style: TextStyle(
                         color: Colors.black,
                         fontFamily: 'Inter',
@@ -83,7 +88,7 @@ class PromoTree extends StatelessWidget {
             ),
           ),
 
-          // Back Button
+          
           Positioned(
             top: 13,
             left: 11,

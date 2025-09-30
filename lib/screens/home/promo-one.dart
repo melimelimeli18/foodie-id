@@ -9,7 +9,7 @@ class PromoOne extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          // Banner Image
+          
           Positioned(
             top: 0,
             left: 0,
@@ -26,7 +26,7 @@ class PromoOne extends StatelessWidget {
             ),
           ),
 
-          // White Card Container
+          
           Positioned(
             top: 270,
             left: 0,
@@ -45,7 +45,7 @@ class PromoOne extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Title
+                    
                     const Text(
                       'Special Promo – Buy 1 Get 1',
                       style: TextStyle(
@@ -59,7 +59,7 @@ class PromoOne extends StatelessWidget {
                     
                     const SizedBox(height: 16),
                     
-                    // Description
+                    
                     const Text(
                       'Nikmati waktu santai dengan minuman favoritmu tanpa harus mikirin dompet!\n\n'
                       'Dalam periode terbatas, setiap pembelian 1 minuman es kopi atau susu pilihan, '
@@ -75,14 +75,14 @@ class PromoOne extends StatelessWidget {
                       ),
                     ),
                     
-                    const SizedBox(height: 80), // Space for bottom padding
+                    const SizedBox(height: 80), 
                   ],
                 ),
               ),
             ),
           ),
 
-          // Back Button
+          
           Positioned(
             top: 13,
             left: 11,

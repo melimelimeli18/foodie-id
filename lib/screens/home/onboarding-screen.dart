@@ -13,10 +13,12 @@ class OnboardingScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 60),
-              // Dine In Card
+
+              // dine in
               GestureDetector(
                 onTap: () {
-                  // Navigate ke home screen dengan mode Dine In
+
+                  // lempar ke home screen pada saat click box dine in
                   Navigator.pushReplacementNamed(context, '/home');
                 },
                 child: _buildOptionCard(
@@ -25,10 +27,12 @@ class OnboardingScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              // Take Away Card
+
+              // take away
               GestureDetector(
                 onTap: () {
-                  // Navigate ke home screen dengan mode Take Away
+
+                  // lempar ke home screen pada saat click box take away
                   Navigator.pushReplacementNamed(context, '/home');
                 },
                 child: _buildOptionCard(
@@ -44,6 +48,7 @@ class OnboardingScreen extends StatelessWidget {
     );
   }
 
+// membuat base widget card
   Widget _buildOptionCard(String title, String imagePath) {
     return Container(
       width: 316,
@@ -57,13 +62,11 @@ class OnboardingScreen extends StatelessWidget {
             blurRadius: 4,
           )
         ],
-        // Base color: rgba(253, 130, 90, 0.50)
         color: Color.fromRGBO(253, 130, 90, 0.5),
       ),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          // Top gradient layer: rgba(232, 90, 44, 0.20) to rgba(255, 210, 63, 0.20)
           gradient: const LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -73,9 +76,10 @@ class OnboardingScreen extends StatelessWidget {
             ],
           ),
         ),
+
+        // untuk mengatur posisi text dan gambar
         child: Stack(
           children: [
-            // Image - posisi di kanan tengah
             Positioned(
               top: 0,
               bottom: 0,
@@ -90,7 +94,6 @@ class OnboardingScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // Text - posisi di kiri tengah
             Positioned(
               left: 30,
               top: 0,
