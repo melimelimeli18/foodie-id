@@ -1,17 +1,15 @@
 name: flutter_application_1
 description: "A new Flutter project."
-
 publish_to: "none" 
-
 version: 1.0.0+1
 
 environment:
   sdk: ">=3.1.3 <4.0.0"
-
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -21,7 +19,32 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    # Sub Menu image
     - assets\tree.jpg
+    - assets\image\sub-menu\Cheese_Boba_Latte.png
+    - assets\image\sub-menu\chocolote_mousse.png
+    - assets\image\sub-menu\brown_sugar_milktea.png
+    - assets\image\sub-menu\iced_caramel_macchiato.png
+    - assets\image\sub-menu\biscoff_hot_chocolate.png
+
+    - assets\image\sub-menu\matcha_soft_serve.png
+    - assets\image\sub-menu\mango_sticky_rice.png
+    - assets\image\sub-menu\brownie_fudge_sundae.png
+    - assets\image\sub-menu\red_velvet_cheesecake.png
+
+    - assets\image\sub-menu\chichken_katsu_curry.png
+    - assets\image\sub-menu\terikayi_chicken_rice.png
+    - assets\image\sub-menu\spagheti_agile_olio.png
+    - assets\image\sub-menu\korean_fried_chicken.png
+
+    - assets\image\sub-menu\loaded_fries.png
+    - assets\image\sub-menu\mozarella_sticks.png
+    - assets\image\sub-menu\takoyaki_balls.png
+    - assets\image\sub-menu\crispi_chicken.png
+
+    # Icon
+    - assets\icon\menu\pattern_icon.svg
+
     - assets\home\foodie_logo.png
     - assets\home\images\41.png
     - assets\home\images\351.png
