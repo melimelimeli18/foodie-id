@@ -41,17 +41,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Foodie.id',
       debugShowCheckedModeBanner: false,
-      // GANTI DISINI BUAT SCREEN, SESUAI ROUTES
-      initialRoute: '/home',
+      // Ubah ke splash screen sebagai initial route
+      initialRoute: '/splash',
 
       routes: {
+        // Splash Screen
+        '/splash': (context) => const SplashScreen(),
+        
         // Home
-        // '/home': (context) => const HomeScreen(),
-        // '/onboarding': (context) => const OnboardingScreen(),
-        // '/promo-one': (context) => const PromoOne(),
-        // '/promo-two': (context) => const PromoTwo(),
-        // '/promo-tree': (context) => const PromoTree(),
-        // '/splash': (context) => const SplashScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/onboarding': (context) => const OnboardingScreen(),
+        '/promo-one': (context) => const PromoOne(),
+        '/promo-two': (context) => const PromoTwo(),
+        '/promo-tree': (context) => const PromoTree(),
 
         // Menu
         // '/menu': (context) => const MenuScreen(),
