@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
-class MenuCheeseBobeLatte extends StatelessWidget {
-  const MenuCheeseBobeLatte({super.key});
+class MenuCheeseBobaLatte extends StatelessWidget {
+  const MenuCheeseBobaLatte({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(top: 40),
                     child: Image.asset(
-                      'assets/image/menu/Cheese_Boba_Latte.png',
+                      'assets/image/sub-menu/Cheese_Boba_Latte.png',
                       width: 500, // bigger size
                       height: 500,
                       fit: BoxFit.contain,

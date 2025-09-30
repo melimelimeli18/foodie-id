@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
-class MenuCheeseBobeLatte extends StatelessWidget {
-  const MenuCheeseBobeLatte({super.key});
+class MenuMatchaSoftServe extends StatelessWidget {
+  const MenuMatchaSoftServe({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(top: 40),
                     child: Image.asset(
-                      'assets/image/menu/Cheese_Boba_Latte.png',
+                      'assets/image/sub-menu/matcha_soft_serve.png',
                       width: 500, // bigger size
                       height: 500,
                       fit: BoxFit.contain,
@@ -126,7 +126,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
-                      'Cheese Boba Latte',
+                      'Matcha Soft Serve',
                       style: TextStyle(
                         fontFamily: 'Plus Jakarta Sans',
                         fontSize: 28,
@@ -156,7 +156,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                     ),
                     SizedBox(height: 12),
                     Text(
-                      'Nikmati perpaduan susu latte yang creamy dengan boba kenyal dan topping cheese foam gurih manis. Segar, unik, dan bikin nagih di setiap tegukan!',
+                      'Matcha Soft Serve dengan rasa teh hijau premium yang earthy dan creamy, disajikan dalam tekstur lembut yang lumer di mulut dan menyegarkan setiap gigitan.',
                       style: TextStyle(
                         fontFamily: 'Plus Jakarta Sans',
                         fontSize: 14,

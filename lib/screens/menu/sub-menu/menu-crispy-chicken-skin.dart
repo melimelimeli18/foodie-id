@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MenuCheeseBobeLatte extends StatelessWidget {
-  const MenuCheeseBobeLatte({super.key});
+class MenuCrispyChickenSkin extends StatelessWidget {
+  const MenuCrispyChickenSkin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(top: 40),
                     child: Image.asset(
-                      'assets/image/menu/Cheese_Boba_Latte.png',
+                      'assets/image/sub-menu/crispi_chicken.png',
                       width: 500, // bigger size
                       height: 500,
                       fit: BoxFit.contain,
@@ -126,7 +126,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
-                      'Cheese Boba Latte',
+                      'Crispy Chicken Skin',
                       style: TextStyle(
                         fontFamily: 'Plus Jakarta Sans',
                         fontSize: 28,
@@ -136,7 +136,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                     ),
                     SizedBox(height: 4),
                     Text(
-                      'Rp 20.000',
+                      'Rp 22.000',
                       style: TextStyle(
                         fontFamily: 'Plus Jakarta Sans',
                         fontSize: 14,
@@ -156,7 +156,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                     ),
                     SizedBox(height: 12),
                     Text(
-                      'Nikmati perpaduan susu latte yang creamy dengan boba kenyal dan topping cheese foam gurih manis. Segar, unik, dan bikin nagih di setiap tegukan!',
+                      'Crispy Chicken Skin dengan tekstur super renyah dan gurih, jadi camilan nagih yang pas disantap kapan saja.',
                       style: TextStyle(
                         fontFamily: 'Plus Jakarta Sans',
                         fontSize: 14,

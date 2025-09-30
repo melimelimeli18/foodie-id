@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
-class MenuCheeseBobeLatte extends StatelessWidget {
-  const MenuCheeseBobeLatte({super.key});
+class MenuBiscoffHotChocolate extends StatelessWidget {
+  const MenuBiscoffHotChocolate({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(top: 40),
                     child: Image.asset(
-                      'assets/image/menu/Cheese_Boba_Latte.png',
+                      'assets/image/sub-menu/biscoff_hot_chocolate.png',
                       width: 500, // bigger size
                       height: 500,
                       fit: BoxFit.contain,
@@ -126,7 +126,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
-                      'Cheese Boba Latte',
+                      'Biscoff Hot Chocolate',
                       style: TextStyle(
                         fontFamily: 'Plus Jakarta Sans',
                         fontSize: 28,
@@ -136,7 +136,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                     ),
                     SizedBox(height: 4),
                     Text(
-                      'Rp 20.000',
+                      'Rp 35.000',
                       style: TextStyle(
                         fontFamily: 'Plus Jakarta Sans',
                         fontSize: 14,
@@ -156,7 +156,7 @@ class MenuCheeseBobeLatte extends StatelessWidget {
                     ),
                     SizedBox(height: 12),
                     Text(
-                      'Nikmati perpaduan susu latte yang creamy dengan boba kenyal dan topping cheese foam gurih manis. Segar, unik, dan bikin nagih di setiap tegukan!',
+                      'Biscoff Hot Chocolate dengan cokelat hangat yang rich berpadu lembut bersama rasa karamel-rempah khas Biscoff, menghadirkan kehangatan manis yang memanjakan di setiap tegukan.',
                       style: TextStyle(
                         fontFamily: 'Plus Jakarta Sans',
                         fontSize: 14,

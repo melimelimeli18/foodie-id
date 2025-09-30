@@ -23,6 +23,7 @@ flutter:
   assets:
     # Sub Menu image
     - assets\tree.jpg
+
     - assets\image\sub-menu\Cheese_Boba_Latte.png
     - assets\image\sub-menu\chocolote_mousse.png
     - assets\image\sub-menu\brown_sugar_milktea.png
