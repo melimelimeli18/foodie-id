@@ -14,7 +14,7 @@ import 'screens/menu/menu-main-course.dart';
 import 'screens/menu/menu-snacks.dart';
 
 // Sub Menu - Meli
-// import 'screens/menu/sub-menu/menu-desserts.dart';
+import 'screens/menu/sub-menu/menu-cheese-boba-latte.dart';
 // import 'screens/menu/sub-menu/menu-drinks.dart';
 
 // Checkout - Jeje
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       title: 'Foodie.id',
       debugShowCheckedModeBanner: false,
       // GANTI DISINI BUAT SCREEN, SESUAI ROUTES
-      initialRoute: '/home',
+      initialRoute: '/menu-cheese-boba-latte',
 
       routes: {
         // Home
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
         // '/menu-snacks': (context) => const MenuSnacks(),
 
         // Sub Menu
-        // '/menu-desserts': (context) => const MenuDesserts(),
+        '/menu-cheese-boba-latte': (context) => const MenuCheeseBobeLatte(),
         // '/menu-drinks': (context) => const MenuDrinks(),
 
         // Checkout
