@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
       title: 'Foodie.id',
       debugShowCheckedModeBanner: false,
       // GANTI DISINI BUAT SCREEN, SESUAI ROUTES
-      initialRoute: '/home',
+      initialRoute: '/splash',
 
       routes: {
         // Splash Screen
@@ -117,10 +117,10 @@ class MyApp extends StatelessWidget {
         '/menu-crispy-chicken-skin': (context) => const MenuCrispyChickenSkin(),
 
         // Checkout
-        '/checkout': (context) => CheckoutPage(),
-        '/qris-invoice': (context) => QrisInvoice(),
-        '/qris-page': (context) => QrisPage(),
-        '/qris-success': (context) => QrisSuccess(),
+        // '/checkout': (context) => CheckoutPage(),
+        // '/qris-invoice': (context) => QrisInvoice(),
+        // '/qris-page': (context) => QrisPage(),
+        // '/qris-success': (context) => QrisSuccess(),
 
         // Profile
         // '/profile': (context) => const ProfileScreen(),

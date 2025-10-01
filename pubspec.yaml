@@ -20,7 +20,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-<<<<<<< HEAD
     - assets/menu/main-course.png
     - assets/menu/snacks.png
     - assets/menu/drinks.png
@@ -41,6 +40,4 @@ flutter:
     - assets/menu/desserts/mango.png
     - assets/menu/desserts/brownie.png
     - assets/menu/desserts/red-velvet.png
-=======
-    # Sub Menu image
     - assets\tree.jpg
