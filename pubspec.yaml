@@ -1,6 +1,6 @@
 name: flutter_application_1
 description: "A new Flutter project."
-publish_to: "none" 
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -40,3 +40,41 @@ flutter:
     - assets/menu/desserts/brownie.png
     - assets/menu/desserts/red-velvet.png
     - assets\tree.jpg
+
+    # Sub Menu image
+    - assets\tree.jpg
+    - assets\image\sub-menu\Cheese_Boba_Latte.png
+    - assets\image\sub-menu\chocolote_mousse.png
+    - assets\image\sub-menu\brown_sugar_milktea.png
+    - assets\image\sub-menu\iced_caramel_macchiato.png
+    - assets\image\sub-menu\biscoff_hot_chocolate.png
+
+    - assets\image\sub-menu\matcha_soft_serve.png
+    - assets\image\sub-menu\mango_sticky_rice.png
+    - assets\image\sub-menu\brownie_fudge_sundae.png
+    - assets\image\sub-menu\red_velvet_cheesecake.png
+
+    - assets\image\sub-menu\chichken_katsu_curry.png
+    - assets\image\sub-menu\terikayi_chicken_rice.png
+    - assets\image\sub-menu\spagheti_agile_olio.png
+    - assets\image\sub-menu\korean_fried_chicken.png
+
+    - assets\image\sub-menu\loaded_fries.png
+    - assets\image\sub-menu\mozarella_sticks.png
+    - assets\image\sub-menu\takoyaki_balls.png
+    - assets\image\sub-menu\crispi_chicken.png
+
+    # Icon
+    - assets\icon\menu\pattern_icon.svg
+
+    - assets\home\foodie_logo.png
+    - assets\home\images\41.png
+    - assets\home\images\351.png
+    - assets\home\promo\promo1.png
+    - assets\home\promo\promo2.png
+    - assets\home\promo\promo3.png
+    - assets\home\promo\promo4.png
+    - assets\home\promo\promo5.png
+    - assets\home\promo\promo6.png
+    - assets\home\boba.png
+    - assets\home\machi.png
