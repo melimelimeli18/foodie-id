@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  shared_preferences: ^2.2.2
+  provider: ^6.0.2
 
 dev_dependencies:
   flutter_test:
@@ -23,18 +25,23 @@ flutter:
     - assets/menu/snacks.png
     - assets/menu/drinks.png
     - assets/menu/desserts.png
+
     - assets/menu/main-course/chicken-katsu-curry.png
     - assets/menu/main-course/kfc.png
     - assets/menu/main-course/spaghetti.png
     - assets/menu/main-course/teriyaki-chicken-rice.png
+
     - assets/menu/snacks/loaded-fries.png
     - assets/menu/snacks/mozarella-sticks.png
     - assets/menu/snacks/takoyaki-balls.png
     - assets/menu/snacks/crispy-chicken-skin.png
+
     - assets/menu/drinks/chocolate-mousse.png
     - assets/menu/drinks/brown-sugar.png
     - assets/menu/drinks/iced-caramel.png
     - assets/menu/drinks/biscoff.png
+    - assets/menu/drinks/Cheese_Boba_Latte.png
+
     - assets/menu/desserts/matcha.png
     - assets/menu/desserts/mango.png
     - assets/menu/desserts/brownie.png

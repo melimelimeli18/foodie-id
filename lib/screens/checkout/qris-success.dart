@@ -77,10 +77,7 @@ class QrisSuccess extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => QrisInvoice()),
-                    );
+                    Navigator.pushNamed(context, '/home');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromRGBO(253, 129, 89, 1),
@@ -90,7 +87,7 @@ class QrisSuccess extends StatelessWidget {
                     elevation: 0,
                   ),
                   child: Text(
-                    'Lihat Struk',
+                    'Kembali ke Beranda',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Plus Jakarta Sans',

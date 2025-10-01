@@ -16,24 +16,23 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              
               // header nya ada reedem, search bar, cart button
               _buildHeader(context),
-              
-              const SizedBox(height: 40), 
-              
+
+              const SizedBox(height: 40),
+
               // Promo
               _buildSectionTitle('Promo'),
               const SizedBox(height: 12),
-              const AutoSlidingPromo(), 
-              
+              const AutoSlidingPromo(),
+
               const SizedBox(height: 30),
-              
+
               // Rekomendasi
               _buildSectionTitle('Rekomendasi'),
               const SizedBox(height: 12),
               _buildRecommendationList(),
-              
+
               const SizedBox(height: 30),
             ],
           ),
@@ -48,7 +47,6 @@ class HomeScreen extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        
         Container(
           height: 180,
           decoration: BoxDecoration(
@@ -112,7 +110,8 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(248, 249, 250, 1),
                           borderRadius: BorderRadius.circular(20),
@@ -174,19 +173,20 @@ class HomeScreen extends StatelessWidget {
                         color: Color.fromRGBO(232, 90, 44, 1),
                       ),
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                     ),
                   ),
                 ),
               ),
-              
-              SizedBox(width: 12), 
-              
+
+              SizedBox(width: 12),
+
               // Shopping Cart Button
               GestureDetector(
                 onTap: () {
                   print('Cart clicked');
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => CartScreen()));
+                  Navigator.pushNamed(context, '/cart-screen');
                 },
                 child: Container(
                   width: 50,
@@ -283,7 +283,6 @@ class HomeScreen extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            
             Positioned(
               right: -20,
               top: 0,
@@ -301,7 +300,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            
             Positioned(
               top: 20,
               left: 20,
@@ -317,7 +315,6 @@ class HomeScreen extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            
             Positioned(
               bottom: 20,
               left: 20,
@@ -329,7 +326,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            
             Positioned(
               bottom: 15,
               right: 15,
@@ -360,7 +356,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-// bikin navibar 
+// bikin navibar
   Widget _buildBottomNav(BuildContext context) {
     return Container(
       height: 75,
@@ -388,7 +384,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildNavItem(BuildContext context, IconData icon, String label, bool isActive, String route) {
+  Widget _buildNavItem(BuildContext context, IconData icon, String label,
+      bool isActive, String route) {
     return GestureDetector(
       onTap: () {
         if (!isActive) {
@@ -419,7 +416,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-// ini buat auto sliding promo 
+// ini buat auto sliding promo
 class AutoSlidingPromo extends StatefulWidget {
   const AutoSlidingPromo({super.key});
 
@@ -431,7 +428,7 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
   late PageController _pageController;
   Timer? _timer;
   int _currentPage = 0;
-  
+
   final List<String> _promoImages = [
     'assets/home/promo/promo1.png',
     'assets/home/promo/promo2.png',
@@ -439,9 +436,9 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
   ];
 
   final List<Widget> _promoScreens = [
-    PromoOne(), 
-    PromoTwo(), 
-    PromoTree(), 
+    PromoOne(),
+    PromoTwo(),
+    PromoTree(),
   ];
 
   @override
@@ -460,7 +457,7 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
       } else {
         _currentPage = 0;
       }
-      
+
       if (_pageController.hasClients) {
         _pageController.animateToPage(
           _currentPage,
@@ -484,7 +481,6 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
       padding: const EdgeInsets.symmetric(horizontal: 22),
       child: Column(
         children: [
-          
           SizedBox(
             height: 153,
             width: 390,
@@ -499,7 +495,6 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -519,7 +514,8 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(_currentPage == index ? 0.15 : 0.08),
+                            color: Colors.black.withOpacity(
+                                _currentPage == index ? 0.15 : 0.08),
                             offset: const Offset(0, 4),
                             blurRadius: 8,
                           ),
@@ -538,9 +534,7 @@ class _AutoSlidingPromoState extends State<AutoSlidingPromo> {
               },
             ),
           ),
-          
           const SizedBox(height: 16),
-          
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(

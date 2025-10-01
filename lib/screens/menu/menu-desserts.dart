@@ -1,4 +1,8 @@
+// lib/menu/menu-desserts.dart
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../providers/cart_provider.dart';
+import '../../data/menu_data.dart';
 
 class MenuDesserts extends StatelessWidget {
   const MenuDesserts({super.key});
@@ -35,7 +39,7 @@ class MenuDesserts extends StatelessWidget {
                       ),
                     ),
                   ),
-                  
+
                   // judul diatas
                   const Text(
                     'Desserts',
@@ -46,77 +50,88 @@ class MenuDesserts extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  
-                  // button cart
-                  GestureDetector(
-                    onTap: () {
-                      print('Cart clicked');
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => CartScreen()));
+
+                  // button cart dengan badge
+                  Consumer<CartProvider>(
+                    builder: (context, cart, child) {
+                      return GestureDetector(
+                        onTap: () {
+                          print('Cart clicked');
+                          Navigator.pushNamed(context, '/cart-screen');
+                        },
+                        child: Stack(
+                          children: [
+                            Container(
+                              width: 42,
+                              height: 42,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFFFFFFF),
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: const Color(0xFF000000)
+                                        .withOpacity(0.1),
+                                    offset: const Offset(0, 2),
+                                    blurRadius: 8,
+                                  ),
+                                ],
+                              ),
+                              child: const Icon(
+                                Icons.shopping_cart_outlined,
+                                color: Color(0xFFFF6B35),
+                                size: 20,
+                              ),
+                            ),
+                            if (cart.itemCount > 0)
+                              Positioned(
+                                right: 0,
+                                top: 0,
+                                child: Container(
+                                  padding: const EdgeInsets.all(4),
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFFFF6B35),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  constraints: const BoxConstraints(
+                                    minWidth: 18,
+                                    minHeight: 18,
+                                  ),
+                                  child: Text(
+                                    '${cart.itemCount}',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                          ],
+                        ),
+                      );
                     },
-                    child: Container(
-                      width: 42,
-                      height: 42,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFFFFFFF),
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0xFF000000).withOpacity(0.1),
-                            offset: const Offset(0, 2),
-                            blurRadius: 8,
-                          ),
-                        ],
-                      ),
-                      child: const Icon(
-                        Icons.shopping_cart_outlined,
-                        color: Color(0xFFFF6B35),
-                        size: 20,
-                      ),
-                    ),
                   ),
                 ],
               ),
             ),
-            
+
             // menu desserts dlm grid
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 16,
-                  childAspectRatio: 0.65,
-                  children: [
-                    _buildMenuItem(
-                      context,
-                      'Matcha Soft Serve',
-                      'assets/menu/desserts/matcha.png',
-                      20000,
-                      '/menu-matcha-soft-serve',
-                    ),
-                    _buildMenuItem(
-                      context,
-                      'Mango Sticky Rice',
-                      'assets/menu/desserts/mango.png',
-                      60000,
-                      '/menu-mango-sticky-rice',
-                    ),
-                    _buildMenuItem(
-                      context,
-                      'Brownie Fudge Sundae',
-                      'assets/menu/desserts/brownie.png',
-                      45000,
-                      '/menu-fudge-sundae',
-                    ),
-                    _buildMenuItem(
-                      context,
-                      'Red Velvet Cheesecake',
-                      'assets/menu/desserts/red-velvet.png',
-                      50000,
-                      '/menu-red-velvet-cheesecake',
-                    ),
-                  ],
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 16,
+                    childAspectRatio: 0.65,
+                  ),
+                  itemCount: MenuData.desserts.length,
+                  itemBuilder: (context, index) {
+                    final item = MenuData.desserts[index];
+                    return _buildMenuItem(context, item);
+                  },
                 ),
               ),
             ),
@@ -126,126 +141,142 @@ class MenuDesserts extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem(BuildContext context, String name, String imagePath, int price, String route) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, route);
-        // Navigate to detail screen or show dialog
-      },
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          gradient: const LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFFFFC1A1),
-              Color(0xFFFFF1C1),
-            ],
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFF000000).withOpacity(0.25),
-              offset: const Offset(0, 4),
-              blurRadius: 4,
-            ),
-          ],
-        ),
-        child: Column(
-          children: [
-            // nama desserts
-            Padding(
-              padding: const EdgeInsets.only(top: 12, left: 8, right: 8),
-              child: Text(
-                name,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Color(0xFF000000),
-                  fontFamily: 'Plus Jakarta Sans',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  height: 1.2,
-                ),
+  Widget _buildMenuItem(BuildContext context, item) {
+    return Consumer<CartProvider>(
+      builder: (context, cart, child) {
+        final isInCart = cart.isInCart(item.id);
+
+        return GestureDetector(
+          onTap: () {
+            // Navigate to detail screen if you have one
+            Navigator.pushNamed(context, item.route);
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFFFFC1A1),
+                  Color(0xFFFFF1C1),
+                ],
               ),
-            ),
-            
-            // foto desserts
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                child: Image.asset(
-                  imagePath,
-                  fit: BoxFit.contain,
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFF000000).withOpacity(0.25),
+                  offset: const Offset(0, 4),
+                  blurRadius: 4,
                 ),
-              ),
+              ],
             ),
-            
-            // harga & button buat add desserts ke cart
-            Padding(
-              padding: const EdgeInsets.only(left: 12, right: 12, bottom: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
+            child: Column(
+              children: [
+                // nama desserts
+                Padding(
+                  padding: const EdgeInsets.only(top: 12, left: 8, right: 8),
+                  child: Text(
+                    item.name,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      color: Color(0xFF000000),
+                      fontFamily: 'Plus Jakarta Sans',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      height: 1.2,
+                    ),
+                  ),
+                ),
+
+                // foto desserts
+                Expanded(
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                    child: Image.asset(
+                      item.imagePath,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+
+                // harga & button buat add/remove desserts ke cart
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 12, right: 12, bottom: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        'Rp',
-                        style: TextStyle(
-                          color: Color(0xFF000000),
-                          fontFamily: 'Plus Jakarta Sans',
-                          fontSize: 11,
-                          fontWeight: FontWeight.w500,
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Text(
+                            'Rp',
+                            style: TextStyle(
+                              color: Color(0xFF000000),
+                              fontFamily: 'Plus Jakarta Sans',
+                              fontSize: 11,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            item.price.toString().replaceAllMapped(
+                                  RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                                  (Match m) => '${m[1]}.',
+                                ),
+                            style: const TextStyle(
+                              color: Color(0xFF000000),
+                              fontFamily: 'Plus Jakarta Sans',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        price.toString().replaceAllMapped(
-                          RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
-                          (Match m) => '${m[1]}.',
-                        ),
-                        style: const TextStyle(
-                          color: Color(0xFF000000),
-                          fontFamily: 'Plus Jakarta Sans',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
+
+                      // button toggle add/remove ke cart
+                      GestureDetector(
+                        onTap: () {
+                          cart.toggleItem(item);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                isInCart
+                                    ? '${item.name} dihapus dari keranjang'
+                                    : '${item.name} ditambahkan ke keranjang',
+                              ),
+                              duration: const Duration(seconds: 1),
+                              backgroundColor: const Color(0xFFFF6B35),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          width: 32,
+                          height: 32,
+                          decoration: BoxDecoration(
+                            color: isInCart
+                                ? const Color(0xFFFF6B35)
+                                : const Color(0xFFFFFFFF),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            isInCart ? Icons.check : Icons.add,
+                            color: isInCart
+                                ? const Color(0xFFFFFFFF)
+                                : const Color(0xFF000000),
+                            size: 20,
+                          ),
                         ),
                       ),
                     ],
                   ),
-                  
-                  // button add ke cart
-                  GestureDetector(
-                    onTap: () {
-                      print('Add $name to cart');
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('$name ditambahkan ke keranjang'),
-                          duration: const Duration(seconds: 1),
-                          backgroundColor: const Color(0xFFFF6B35),
-                        ),
-                      );
-                    },
-                    child: Container(
-                      width: 32,
-                      height: 32,
-                      decoration: const BoxDecoration(
-                        color: Color(0xFFFFFFFF),
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(
-                        Icons.add,
-                        color: Color(0xFF000000),
-                        size: 20,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

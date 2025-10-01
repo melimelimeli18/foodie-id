@@ -99,25 +99,26 @@ class QrisInvoice extends StatelessWidget {
                 ),
               ),
 
-              //download button
+              // Download button
               Positioned(
                 top: 590,
                 left: 42,
                 child: InkWell(
                   onTap: () {
-                    print('Download receipt');
+                    // Navigate ke QRIS Page
+                    Navigator.pushNamed(context, '/qris-page');
                   },
                   child: Container(
                     width: 300,
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Color.fromRGBO(253, 129, 89, 1),
+                      color: const Color.fromRGBO(253, 129, 89, 1),
                     ),
                     child: Center(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.download,
                             color: Colors.black,

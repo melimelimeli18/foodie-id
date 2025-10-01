@@ -35,6 +35,7 @@ class MenuScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       print('Cart clicked');
+                      Navigator.pushNamed(context, '/cart-screen');
                     },
                     child: Container(
                       width: 42,
@@ -62,72 +63,64 @@ class MenuScreen extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             Expanded(
               child: ListView(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 children: [
                   const SizedBox(height: 8),
-                  
                   _buildMenuCard(
                     context,
                     title: 'Main Course',
                     imagePath: 'assets/menu/main-course.png',
                     onTap: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const MenuMainCourse())
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MenuMainCourse()));
                     },
                   ),
-                  
                   const SizedBox(height: 16),
-                  
                   _buildMenuCard(
                     context,
                     title: 'Snacks & Sides',
                     imagePath: 'assets/menu/snacks.png',
                     onTap: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const MenuSnacks())
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MenuSnacks()));
                     },
                   ),
-                  
                   const SizedBox(height: 16),
-                  
                   _buildMenuCard(
                     context,
                     title: 'Drinks',
                     imagePath: 'assets/menu/drinks.png',
                     onTap: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const MenuDrinks())
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MenuDrinks()));
                     },
                   ),
-                  
                   const SizedBox(height: 16),
-                  
                   _buildMenuCard(
                     context,
                     title: 'Desserts',
                     imagePath: 'assets/menu/desserts.png',
                     onTap: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const MenuDesserts())
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MenuDesserts()));
                     },
                   ),
-                  
                   const SizedBox(height: 16),
                 ],
               ),
             ),
-            
+
             _buildBottomNav(context),
           ],
         ),
@@ -230,7 +223,8 @@ class MenuScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildNavItem(BuildContext context, IconData icon, String label, bool isActive, String route) {
+  Widget _buildNavItem(BuildContext context, IconData icon, String label,
+      bool isActive, String route) {
     return GestureDetector(
       onTap: () {
         if (!isActive) {
