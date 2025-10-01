@@ -45,10 +45,10 @@ import 'screens/menu/sub-menu/menu-crispy-chicken-skin.dart';
 // import 'screens/checkout/qris-success.dart';
 
 // Profile - Caca
-// import 'screens/profile/profile-screen.dart';
-// import 'screens/profile/edit-profile.dart';
-// import 'screens/profile/contact-us.dart';
-// import 'screens/profile/faq-page.dart';
+import 'screens/profile/profile-screen.dart';
+import 'screens/profile/edit-profile.dart';
+import 'screens/profile/contact-us.dart';
+import 'screens/profile/faq-page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -118,10 +118,10 @@ class MyApp extends StatelessWidget {
         // '/qris-success': (context) => const QrisSuccess(),
 
         // Profile
-        // '/profile': (context) => const ProfileScreen(),
-        // '/edit-profile': (context) => const EditProfile(),
-        // '/contact-us': (context) => const ContactUs(),
-        // '/faq': (context) => const FaqPage(),
+        '/profile': (context) => const ProfileScreen(),
+        '/edit-profile': (context) => const EditProfile(),
+        '/contact-us': (context) => const ContactUs(),
+        '/faq': (context) => const FaqPage(),
       },
     );
   }
