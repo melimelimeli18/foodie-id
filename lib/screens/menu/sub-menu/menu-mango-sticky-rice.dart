@@ -81,26 +81,31 @@ class MenuMangoStickyRice extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Container(
-                          width: 42,
-                          height: 42,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                                blurRadius: 4,
-                                offset: const Offset(0, 2),
-                              ),
-                            ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/cart-screen');
+                          },
+                          child: Container(
+                            width: 42,
+                            height: 42,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.2),
+                                  blurRadius: 4,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                            child: const Icon(
+                              Icons.shopping_cart,
+                              color: Color(0xFFFF6B35),
+                              size: 20,
+                            ),
                           ),
-                          child: const Icon(
-                            Icons.shopping_cart,
-                            color: Color(0xFFFF6B35),
-                            size: 20,
-                          ),
-                        ),
+                        )
                       ],
                     ),
                   ),
