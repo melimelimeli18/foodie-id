@@ -78,3 +78,6 @@ flutter:
     - assets\home\promo\promo6.png
     - assets\home\boba.png
     - assets\home\machi.png
+
+    # Profile
+    - assets\profile\profiles.png
