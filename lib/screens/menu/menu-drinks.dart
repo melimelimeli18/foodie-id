@@ -93,24 +93,28 @@ class MenuDrinks extends StatelessWidget {
                       'Chocolate Mousse',
                       'assets/menu/drinks/chocolate-mousse.png',
                       35000,
+                      '/menu-chocolate-mousse',
                     ),
                     _buildMenuItem(
                       context,
                       'Brown Sugar Milk Tea',
                       'assets/menu/drinks/brown-sugar.png',
                       30000,
+                      '/menu-brown-sugar-milk-tea',
                     ),
                     _buildMenuItem(
                       context,
                       'Iced Caramel Macchiato',
                       'assets/menu/drinks/iced-caramel.png',
                       25000,
+                      '/menu-iced-caramel-macchiato',
                     ),
                     _buildMenuItem(
                       context,
                       'Biscoff Hot Chocolate',
                       'assets/menu/drinks/biscoff.png',
                       25000,
+                      '/menu-biscoff-hot-chocolate',
                     ),
                   ],
                 ),
@@ -122,10 +126,10 @@ class MenuDrinks extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem(BuildContext context, String name, String imagePath, int price) {
+  Widget _buildMenuItem(BuildContext context, String name, String imagePath, int price, String route) {
     return GestureDetector(
       onTap: () {
-        print('$name clicked');
+        Navigator.pushNamed(context, route);
         // Navigate to detail screen or show dialog
       },
       child: Container(

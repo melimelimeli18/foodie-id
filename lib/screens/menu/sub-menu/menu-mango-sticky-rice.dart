@@ -36,7 +36,7 @@ class MenuMangoStickyRice extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(top: 40),
                     child: Image.asset(
-                      'assets/image/menu/mango_sticky_rice.png',
+                      'assets/image/sub-menu/mango_sticky_rice.png',
                       width: 500, // bigger size
                       height: 500,
                       fit: BoxFit.contain,

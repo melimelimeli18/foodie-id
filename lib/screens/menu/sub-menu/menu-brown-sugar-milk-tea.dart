@@ -156,7 +156,7 @@ class MenuBrownSugarMilkTea extends StatelessWidget {
                     ),
                     SizedBox(height: 12),
                     Text(
-                      'Brown Sugar Milk Tea',
+                      'Nikmati kesegaran Brown Sugar Milk Tea dengan paduan teh susu premium dan sentuhan manis gula aren yang khas. Dilengkapi dengan topping boba kenyal serta golden pearl yang lembut, minuman ini memberikan sensasi manis, creamy, dan chewy dalam setiap tegukan. Cocok diminum kapan saja untuk menyegarkan hari Anda.',
                       style: TextStyle(
                         fontFamily: 'Plus Jakarta Sans',
                         fontSize: 14,

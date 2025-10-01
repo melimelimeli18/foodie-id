@@ -36,7 +36,7 @@ class MenuTeriyakiChickenRice extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(top: 40),
                     child: Image.asset(
-                      'assets/image/menu/terikayi_chicken_rice.png',
+                      'assets/image/sub-menu/terikayi_chicken_rice.png',
                       width: 500, // bigger size
                       height: 500,
                       fit: BoxFit.contain,

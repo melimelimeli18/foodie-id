@@ -93,24 +93,28 @@ class MenuSnacks extends StatelessWidget {
                       'Loaded Fries',
                       'assets/menu/snacks/loaded-fries.png',
                       35000,
+                      '/menu-loaded-fries',
                     ),
                     _buildMenuItem(
                       context,
                       'Mozarella Sticks',
                       'assets/menu/snacks/mozarella-sticks.png',
                       40000,
+                      '/menu-mozarella-sticks',
                     ),
                     _buildMenuItem(
                       context,
                       'Takoyaki Balls',
                       'assets/menu/snacks/takoyaki-balls.png',
                       35000,
+                      '/menu-takoyaki-balls',
                     ),
                     _buildMenuItem(
                       context,
                       'Crispy Chicken Skin',
                       'assets/menu/snacks/crispy-chicken-skin.png',
                       30000,
+                      '/menu-crispy-chicken-skin',
                     ),
                   ],
                 ),
@@ -122,10 +126,10 @@ class MenuSnacks extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem(BuildContext context, String name, String imagePath, int price) {
+  Widget _buildMenuItem(BuildContext context, String name, String imagePath, int price, String route) {
     return GestureDetector(
       onTap: () {
-        print('$name clicked');
+        Navigator.pushNamed(context, route);
         // Navigate to detail screen or show dialog
       },
       child: Container(

@@ -36,7 +36,7 @@ class MenuIcedCaramelMacchiato extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(top: 40),
                     child: Image.asset(
-                      'assets/imagesub-menu/iced_caramel_macchiato.png',
+                      'assets/image/sub-menu/iced_caramel_macchiato.png',
                       width: 500, // bigger size
                       height: 500,
                       fit: BoxFit.contain,

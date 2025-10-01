@@ -87,6 +87,7 @@ class MyApp extends StatelessWidget {
 
         //Cart
         '/cart-screen': (context) => const CartScreen(),
+
         // Sub Menu
         // Minuman
         '/menu-biscoff-hot-chocolate': (context) =>
@@ -98,6 +99,14 @@ class MyApp extends StatelessWidget {
             const MenuIcedCaramelMacchiato(),
         '/menu-chocolate-mousse': (context) => const MenuChocolateMousse(),
 
+        // Main Course
+        '/menu-chicken-katsu-curry': (context) => const MenuChickenKatsuCurry(),
+        '/menu-teriyaki-chicken-rice': (context) =>
+            const MenuTeriyakiChickenRice(),
+        '/menu-spaghetti-olio': (context) => const MenuSpaghettiOlio(),
+        '/menu-fried-chicken': (context) => const MenuFriedChicken(),
+        '/menu-crispy-chicken-skin': (context) => const MenuCrispyChickenSkin(),
+
         // Dessert & Snack
         '/menu-mango-sticky-rice': (context) => const MenuMangoStickyRice(),
         '/menu-fudge-sundae': (context) => const MenuFudgeSundae(),
@@ -107,14 +116,6 @@ class MyApp extends StatelessWidget {
         '/menu-mozarella-sticks': (context) => const MenuMozarellaSticks(),
         '/menu-takoyaki-balls': (context) => const MenuTakoyakiBalls(),
         '/menu-matcha-soft-serve': (context) => const MenuMatchaSoftServe(),
-
-        // Main Course
-        '/menu-chicken-katsu-curry': (context) => const MenuChickenKatsuCurry(),
-        '/menu-teriyaki-chicken-rice': (context) =>
-            const MenuTeriyakiChickenRice(),
-        '/menu-spaghetti-olio': (context) => const MenuSpaghettiOlio(),
-        '/menu-fried-chicken': (context) => const MenuFriedChicken(),
-        '/menu-crispy-chicken-skin': (context) => const MenuCrispyChickenSkin(),
 
         // Checkout
         // '/checkout': (context) => CheckoutPage(),

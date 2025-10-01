@@ -93,24 +93,28 @@ class MenuDesserts extends StatelessWidget {
                       'Matcha Soft Serve',
                       'assets/menu/desserts/matcha.png',
                       20000,
+                      '/menu-matcha-soft-serve',
                     ),
                     _buildMenuItem(
                       context,
                       'Mango Sticky Rice',
                       'assets/menu/desserts/mango.png',
                       60000,
+                      '/menu-mango-sticky-rice',
                     ),
                     _buildMenuItem(
                       context,
                       'Brownie Fudge Sundae',
                       'assets/menu/desserts/brownie.png',
                       45000,
+                      '/menu-fudge-sundae',
                     ),
                     _buildMenuItem(
                       context,
                       'Red Velvet Cheesecake',
                       'assets/menu/desserts/red-velvet.png',
                       50000,
+                      '/menu-red-velvet-cheesecake',
                     ),
                   ],
                 ),
@@ -122,10 +126,10 @@ class MenuDesserts extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem(BuildContext context, String name, String imagePath, int price) {
+  Widget _buildMenuItem(BuildContext context, String name, String imagePath, int price, String route) {
     return GestureDetector(
       onTap: () {
-        print('$name clicked');
+        Navigator.pushNamed(context, route);
         // Navigate to detail screen or show dialog
       },
       child: Container(

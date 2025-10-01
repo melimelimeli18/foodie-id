@@ -128,7 +128,7 @@ class MenuScreen extends StatelessWidget {
               ),
             ),
             
-            _buildBottomNav(),
+            _buildBottomNav(context),
           ],
         ),
       ),
@@ -203,18 +203,18 @@ class MenuScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildBottomNav() {
+  Widget _buildBottomNav(BuildContext context) {
     return Container(
       height: 75,
-      decoration: const BoxDecoration(
-        color: Color(0xFFFFEBE5),
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(255, 235, 229, 1),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(15),
           topRight: Radius.circular(15),
         ),
         border: Border(
           top: BorderSide(
-            color: Color(0xFFE85A2C),
+            color: Color.fromRGBO(232, 90, 44, 1),
             width: 2,
           ),
         ),
@@ -222,35 +222,41 @@ class MenuScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _buildNavItem(Icons.home, 'HOME', false),
-          _buildNavItem(Icons.restaurant_menu, 'MENU', true),
-          _buildNavItem(Icons.person, 'PROFILE', false),
+          _buildNavItem(context, Icons.home, 'HOME', false, '/home'),
+          _buildNavItem(context, Icons.restaurant_menu, 'MENU', true, '/menu'),
+          _buildNavItem(context, Icons.person, 'PROFILE', false, '/profile'),
         ],
       ),
     );
   }
 
-  // navbar
-  Widget _buildNavItem(IconData icon, String label, bool isActive) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          color: const Color(0xFFE85A2C),
-          size: 26,
-        ),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(
-            fontFamily: 'Plus Jakarta Sans',
-            fontSize: 14,
-            color: const Color(0xFFE85A2C),
-            fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+  Widget _buildNavItem(BuildContext context, IconData icon, String label, bool isActive, String route) {
+    return GestureDetector(
+      onTap: () {
+        if (!isActive) {
+          Navigator.pushNamed(context, route);
+        }
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
+            color: Color.fromRGBO(232, 90, 44, 1),
+            size: 26,
           ),
-        ),
-      ],
+          SizedBox(height: 4),
+          Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Plus Jakarta Sans',
+              fontSize: 14,
+              color: Color.fromRGBO(232, 90, 44, 1),
+              fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
