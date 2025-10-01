@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       // untuk bottom navigation ditaro paling bawah
-      bottomNavigationBar: _buildBottomNav(),
+      bottomNavigationBar: _buildBottomNav(context),
     );
   }
 
@@ -361,7 +361,7 @@ class HomeScreen extends StatelessWidget {
   }
 
 // bikin navibar 
-  Widget _buildBottomNav() {
+  Widget _buildBottomNav(BuildContext context) {
     return Container(
       height: 75,
       decoration: BoxDecoration(

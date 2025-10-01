@@ -9,9 +9,11 @@ import 'screens/home/promo-two.dart';
 import 'screens/home/splash-screen.dart';
 
 // Menu - Gebi
-// import 'screens/menu/menu-screen.dart';
-// import 'screens/menu/menu-main-course.dart';
-// import 'screens/menu/menu-snacks.dart';
+import 'screens/menu/menu-screen.dart';
+import 'screens/menu/menu-main-course.dart';
+import 'screens/menu/menu-snacks.dart';
+import 'screens/menu/menu-drinks.dart';
+import 'screens/menu/menu-desserts.dart';
 
 //Cart
 import 'screens/cart/cart-screen.dart';
@@ -62,8 +64,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Foodie.id',
       debugShowCheckedModeBanner: false,
-      // Ubah ke splash screen sebagai initial route
+      // GANTI DISINI BUAT SCREEN, SESUAI ROUTES
       initialRoute: '/splash',
+
       routes: {
         // Splash Screen
         '/splash': (context) => const SplashScreen(),
@@ -76,9 +79,11 @@ class MyApp extends StatelessWidget {
         '/promo-tree': (context) => const PromoTree(),
 
         // Menu
-        // '/menu': (context) => const MenuScreen(),
-        // '/menu-main-course': (context) => const MenuMainCourse(),
-        // '/menu-snacks': (context) => const MenuSnacks(),
+        '/menu': (context) => const MenuScreen(),
+        '/menu-main-course': (context) => const MenuMainCourse(),
+        '/menu-snacks': (context) => const MenuSnacks(),
+        '/menu-drinks': (context) => const MenuDrinks(),
+        '/menu-desserts': (context) => const MenuDesserts(),
 
         //Cart
         '/cart-screen': (context) => const CartScreen(),
@@ -112,10 +117,10 @@ class MyApp extends StatelessWidget {
         '/menu-crispy-chicken-skin': (context) => const MenuCrispyChickenSkin(),
 
         // Checkout
-        // '/checkout': (context) => const CheckoutPage(),
-        // '/qris-invoice': (context) => const QrisInvoice(),
-        // '/qris-page': (context) => const QrisPage(),
-        // '/qris-success': (context) => const QrisSuccess(),
+        // '/checkout': (context) => CheckoutPage(),
+        // '/qris-invoice': (context) => QrisInvoice(),
+        // '/qris-page': (context) => QrisPage(),
+        // '/qris-success': (context) => QrisSuccess(),
 
         // Profile
         '/profile': (context) => const ProfileScreen(),

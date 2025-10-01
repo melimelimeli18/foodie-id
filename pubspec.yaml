@@ -1,15 +1,15 @@
 name: flutter_application_1
 description: "A new Flutter project."
-publish_to: "none" 
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
   sdk: ">=3.1.3 <4.0.0"
 dependencies:
+  flutter_svg: ^2.0.0
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -19,6 +19,28 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/menu/main-course.png
+    - assets/menu/snacks.png
+    - assets/menu/drinks.png
+    - assets/menu/desserts.png
+    - assets/menu/main-course/chicken-katsu-curry.png
+    - assets/menu/main-course/kfc.png
+    - assets/menu/main-course/spaghetti.png
+    - assets/menu/main-course/teriyaki-chicken-rice.png
+    - assets/menu/snacks/loaded-fries.png
+    - assets/menu/snacks/mozarella-sticks.png
+    - assets/menu/snacks/takoyaki-balls.png
+    - assets/menu/snacks/crispy-chicken-skin.png
+    - assets/menu/drinks/chocolate-mousse.png
+    - assets/menu/drinks/brown-sugar.png
+    - assets/menu/drinks/iced-caramel.png
+    - assets/menu/drinks/biscoff.png
+    - assets/menu/desserts/matcha.png
+    - assets/menu/desserts/mango.png
+    - assets/menu/desserts/brownie.png
+    - assets/menu/desserts/red-velvet.png
+    - assets\tree.jpg
+
     # Sub Menu image
     - assets\tree.jpg
     - assets\image\sub-menu\Cheese_Boba_Latte.png
