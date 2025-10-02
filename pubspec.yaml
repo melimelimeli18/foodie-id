@@ -85,6 +85,7 @@ flutter:
     - assets\home\promo\promo6.png
     - assets\home\boba.png
     - assets\home\machi.png
+    - assets\QR CODE.png
 
     # Profile
     - assets\profile\profiles.png

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/checkout/qris-invoice.dart';
+import 'package:flutter_application_1/screens/checkout/qris-page.dart';
 
 class QrisSuccess extends StatelessWidget {
   @override
@@ -9,15 +10,17 @@ class QrisSuccess extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
+            // back button di pojok kiri atas
             Padding(
               padding: const EdgeInsets.all(22.0),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: GestureDetector(
                   onTap: () {
+                    // navigasi ke hal invoice dgn cara mengganti hal saat ini
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => QrisInvoice()),
+                      MaterialPageRoute(builder: (context) => QrisPage()),
                     );
                   },
                   child: Container(
@@ -37,6 +40,8 @@ class QrisSuccess extends StatelessWidget {
               ),
             ),
             Spacer(flex: 2),
+
+            // icon sukses dgn tanda centang
             Container(
               width: 100,
               height: 100,
@@ -57,7 +62,10 @@ class QrisSuccess extends StatelessWidget {
                 size: 50,
               ),
             ),
+
             SizedBox(height: 30),
+
+            // konfirmasi pembayaran berhasil
             Text(
               'Pembayaran berhasil',
               textAlign: TextAlign.center,
@@ -69,6 +77,7 @@ class QrisSuccess extends StatelessWidget {
               ),
             ),
             Spacer(flex: 3),
+
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 47.0, vertical: 40),
@@ -77,7 +86,8 @@ class QrisSuccess extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/home');
+                    // navigasi ke hal invoice pakai nama route
+                    Navigator.pushNamed(context, '/qris-invoice');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromRGBO(253, 129, 89, 1),
@@ -87,7 +97,7 @@ class QrisSuccess extends StatelessWidget {
                     elevation: 0,
                   ),
                   child: Text(
-                    'Kembali ke Beranda',
+                    'Lihat Struk',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Plus Jakarta Sans',

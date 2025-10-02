@@ -30,13 +30,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
               return _buildEmptyCheckout(context);
             }
 
+            // tampilan utama co, scroll
             return SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(18),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Header
                     Row(
                       children: [
                         Container(
@@ -76,7 +76,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
                     const SizedBox(height: 20),
 
-                    // List Items in Cart
+                    // menampilkan semua item yg ada di cart
                     ...cart.items.map((cartItem) => Padding(
                           padding: const EdgeInsets.only(bottom: 12),
                           child: _buildProductCard(cart, cartItem),
@@ -84,7 +84,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
                     const SizedBox(height: 20),
 
-                    // Deskripsi Section (optional - bisa dihapus jika tidak perlu)
+                    // deskripsi section (optional - bisa dihapus jika tidak perlu)
                     const Text(
                       'Note',
                       style: TextStyle(
@@ -119,7 +119,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
                     const SizedBox(height: 20),
 
-                    // Payment Method
+                    // utk memilih metode pembayaran
                     const Text(
                       'Bayar',
                       style: TextStyle(
@@ -156,7 +156,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
                     const SizedBox(height: 24),
 
-                    // Price Summary
+                    // rincian harga
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -178,6 +178,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       ],
                     ),
                     const SizedBox(height: 12),
+
+                    // pajak
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -199,6 +201,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       ],
                     ),
                     const SizedBox(height: 12),
+                    // total keseluruhan
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -223,7 +226,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
                     const SizedBox(height: 30),
 
-                    // Checkout Button
+                    // tombol bayar
                     SizedBox(
                       width: double.infinity,
                       height: 57,
@@ -237,8 +240,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
                           elevation: 0,
                         ),
                         onPressed: () {
-                          // Navigate ke Home page
-                          Navigator.pushNamed(context, '/qris-invoice');
+                          // navigate ke qris-page
+                          Navigator.pushNamed(context, '/qris-page');
                         },
                         child: const Text(
                           'Bayar Sekarang',
@@ -262,6 +265,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
     );
   }
 
+  // utk menampilkan hal kosong jika cart kosong
   Widget _buildEmptyCheckout(BuildContext context) {
     return Center(
       child: Column(
@@ -319,6 +323,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
     );
   }
 
+  // utk menampilkan tiap item yg ada di cart
   Widget _buildProductCard(CartProvider cart, cartItem) {
     return Container(
       padding: const EdgeInsets.all(16),
@@ -337,7 +342,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Product Image
+          // gambar produk
           Container(
             width: 70,
             height: 70,
@@ -355,7 +360,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
           ),
           const SizedBox(width: 16),
 
-          // Product Details
+          // produk detail
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -370,6 +375,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   ),
                 ),
                 const SizedBox(height: 4),
+                // harga per item
                 Text(
                   cart.formatPrice(cartItem.menuItem.price),
                   style: const TextStyle(
@@ -380,7 +386,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   ),
                 ),
                 const SizedBox(height: 8),
-                // Quantity Display
+                // jumlah item
                 Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -401,7 +407,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
             ),
           ),
 
-          // Total Price
+          // total harga
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
