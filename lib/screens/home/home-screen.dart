@@ -326,30 +326,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              bottom: 15,
-              right: 15,
-              child: Container(
-                width: 35,
-                height: 35,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      offset: Offset(0, 2),
-                      blurRadius: 4,
-                    ),
-                  ],
-                ),
-                child: Icon(
-                  Icons.add,
-                  color: Color.fromRGBO(232, 90, 44, 1),
-                  size: 22,
-                ),
-              ),
-            ),
           ],
         ),
       ),
