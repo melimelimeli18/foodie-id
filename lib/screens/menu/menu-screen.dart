@@ -120,11 +120,10 @@ class MenuScreen extends StatelessWidget {
                 ],
               ),
             ),
-
-            _buildBottomNav(context),
           ],
         ),
       ),
+      bottomNavigationBar: _buildBottomNav(context),
     );
   }
 
