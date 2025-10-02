@@ -91,8 +91,6 @@ class QrisInvoice extends StatelessWidget {
                   // download button utk download struk
                   InkWell(
                     onTap: () {
-                      // Logika download struk di sini
-                      // Untuk saat ini hanya menampilkan snackbar sebagai contoh
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text('Struk berhasil diunduh'),
